@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试文件</title>
+</head>
+<body>
+
+{$data.password|md5}
+<hr>
+{$data.password1}
+<form>
+    <span>账号</span><input type="text" name="user">
+    <span>密码</span><input type="text" name="pwd">
+    <input type="button" name="button" value="按钮">
+
+</form>
+</body>
+<script src="__STATIC__/lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['jquery', 'layer', 'miniAdmin', 'miniTongji'], function () {
+        var $ = layui.jquery,
+            layer = layui.layer,
+            miniAdmin = layui.miniAdmin,
+            miniTongji = layui.miniTongji;
+
+        var options = {
+            iniUrl: "api/init.json",    // 初始化接口
+            clearUrl: "api/clear.json", // 缓存清理接口
+            urlHashLocation: true,      // 是否打开hash定位
+            bgColorDefault: false,      // 主题默认配置
+            multiModule: true,          // 是否开启多模块
+            menuChildOpen: false,       // 是否默认展开菜单
+            loadingTime: 0,             // 初始化加载时间
+            pageAnim: true,             // iframe窗口动画
+            maxTabNum: 20,              // 最大的tab打开数量
+        };
+        // miniAdmin.render(options);
+
+
+        $('#button').on("click", function () {
+            layui.button()
+            layer.msg('退出登录成功', function () {
+            });
+        });
+    });
+
+
+
+</script>
+</html>
